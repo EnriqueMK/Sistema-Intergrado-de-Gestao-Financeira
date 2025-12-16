@@ -1,4 +1,5 @@
-# Sistema Integrado de Gestão Financeira
+# Sistema Integrado de Gestão Financeira 
+## ( Em andamento )
 Parte I 
   Java Credit Simulator ( Java POO )
   - Sistema onde faz o cadastro do cliente, as tranferências bancárias, e as alterações de cadastro
