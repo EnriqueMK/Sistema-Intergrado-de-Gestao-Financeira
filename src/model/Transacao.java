@@ -1,5 +1,5 @@
 package src.model;
 
-public class Transacao {
+public interface Transacao {
     
 }
