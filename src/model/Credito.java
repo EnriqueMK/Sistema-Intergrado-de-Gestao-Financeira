@@ -2,20 +2,10 @@ package src.model;
 
 public class Credito extends Cartao {
     private double limite;
-    private double saldoUtilizado;
+    protected double limiteGasto;
 
-    public Credito(double limite) {
-        super();
-        this.limite = limite;
-    }
 
-    public double getLimite() {
-        return limite;
-    }
-
-    public double getSaldoUtilizado() {
-        return saldoUtilizado;
-    }
+    public Credito(double limite) { super(); this.limite = limite; }
 
     @Override
     public void exibirDadosCartao() {

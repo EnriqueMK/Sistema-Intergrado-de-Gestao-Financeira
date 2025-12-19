@@ -1,12 +1,14 @@
-import java.util.Random;
-import java.time.LocalDate;
+import java.util.Stack;
 
 public class index {
-    public static Random random = new Random();
     public static void main(String[] args) {
+        Stack<String> pilha = new Stack<>();
+
+        if (pilha.isEmpty()) {
+            System.out.println("A pilha está vazia!");
+        } else {
+            System.out.println(pilha);
+        }
         
-        LocalDate add3 = LocalDate.now().plusYears(3);
-        
-        System.out.println(add3);
     }
 }
