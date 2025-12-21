@@ -25,6 +25,5 @@ public abstract class Cartao {
     public String getNumero() { return numero; }
     public int getCvv() { return cvv; }
     public YearMonth getDataVenc() { return dataVenc; }
-
-    public abstract void exibirDadosCartao();
+    public abstract void informacoesCartao();
 }

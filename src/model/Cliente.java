@@ -7,14 +7,16 @@ public class Cliente {
     private String telefone;
     private String endereco;
 
-    private Cartao cartao;
-
-    public Cliente(String nome, String cpf, String telefone, String endereco, Cartao cartao) {
+    public Cliente(String nome, String cpf, String telefone, String endereco) {
+        if (nome == null || nome.isEmpty()) {
+            throw new IllegalArgumentException("O nome não pode estar vazio.");
+        } else if (nome.length() < 3 || nome.length() > 100) {
+            throw new IllegalArgumentException("O nome deve conter entre 3 e 100 caractéres.");
+        } else if (!nome.natches)
         this.nome = nome;
-        this.cpf = cpf; 
+        this.cpf = cpf;
         this.telefone = telefone;
         this.endereco = endereco;
-        this.cartao = cartao;
     }
 
     public String getNome() { return nome; }
@@ -25,18 +27,12 @@ public class Cliente {
     public void setTelefone(String telefone) { this.telefone = telefone; }
     public void setEndereco(String endereco) { this.endereco = endereco; }
 
-    public void exibirDadosCliente() {
-        System.out.println("Olá " + getNome() + " Sejá Bem-vindo ao seu Banco!");
+    public void cadastroCliente() {
+        System.out.println("\nOlá " + getNome() + " Sejá Bem-vindo ao seu Banco!");
         System.out.println("=================================");
-        System.out.println("Seu cadastro");
+        System.out.println("SEU CADASTRO");
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + getCpf());
         System.out.println("Telefone: " + getTelefone());
-
-        if (cartao != null) {
-            cartao.exibirDadosCartao();
-        } else {
-            System.out.println("Cliente ainda não possui cartão cadastrado.");
-        }
     } 
 }

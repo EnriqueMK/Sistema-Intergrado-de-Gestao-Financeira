@@ -1,16 +1,20 @@
 package src.app;
 
 import src.model.Cliente;
-import src.model.Credito;
 
 public class Main {
-    
     public static void main(String[] args) {
 
-        Credito credito = new Credito(2000);
-        
-        Cliente cliente = new Cliente("Enrique", "50690239858", "11968746930", "Rua Vulnerária, 58", credito);
+        try {
+            Cliente cliente = new Cliente("ass", "50690239858", "11968746930", "Rua Vulnerária, 58");
+            cliente.cadastroCliente();
+        } catch (IllegalArgumentException erro) {
+            System.err.println("Erro: " + erro.getMessage());
+        } catch (Exception erroInes) {
+            System.err.println("Erro inesperado: " + erroInes.getMessage());
+        } finally {
+            System.out.println("Processo finalizado.");
+        }        
 
-        cliente.exibirDadosCliente();
     }
 }
