@@ -1,5 +1,7 @@
 package src.model;
 
+import src.validation.NomeValidar;
+
 public class Cliente {
 
     private String nome;
@@ -8,16 +10,12 @@ public class Cliente {
     private String endereco;
 
     public Cliente(String nome, String cpf, String telefone, String endereco) {
-        if (nome == null || nome.isEmpty()) {
-            throw new IllegalArgumentException("O nome não pode estar vazio.");
-        } else if (nome.length() < 3 || nome.length() > 100) {
-            throw new IllegalArgumentException("O nome deve conter entre 3 e 100 caractéres.");
-        } else if (!nome.natches)
-        this.nome = nome;
+        this.nome = NomeValidar.validar(nome);
         this.cpf = cpf;
         this.telefone = telefone;
         this.endereco = endereco;
     }
+
 
     public String getNome() { return nome; }
     public String getCpf() { return cpf; }
