@@ -3,7 +3,7 @@ package src.model;
 public class Credito extends Cartao {
     private double limite;
 
-    public Credito(double limite) { super(); this.limite = limite; }
+    public Credito(Cliente cliente, Double limite) { super(); this.limite = limite; }
     public double getLimite() { return limite; }
     public String exibirLimite() { return "Limite: " + getLimite(); }
 

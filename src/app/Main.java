@@ -7,6 +7,7 @@ public class Main {
 
         try {
             Cliente cliente = new Cliente("Enrique Paulo", "50690239858", "11968746930", "Rua Vulnerária, 58");
+            
             cliente.cadastroCliente();
         } catch (IllegalArgumentException erro) {
             System.err.println("Erro: " + erro.getMessage());

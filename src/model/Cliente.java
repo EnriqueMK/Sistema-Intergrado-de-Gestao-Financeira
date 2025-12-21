@@ -1,6 +1,10 @@
 package src.model;
 
+import src.validation.CartaoValidar;
+import src.validation.CpfValidar;
+import src.validation.EnderecoValidar;
 import src.validation.NomeValidar;
+import src.validation.TelefoneValidar;
 
 public class Cliente {
 
@@ -8,22 +12,26 @@ public class Cliente {
     private String cpf;
     private String telefone;
     private String endereco;
+    private Cartao cartao;
 
     public Cliente(String nome, String cpf, String telefone, String endereco) {
         this.nome = NomeValidar.validar(nome);
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.endereco = endereco;
+        this.cpf = CpfValidar.validar(cpf);
+        this.telefone = TelefoneValidar.validar(telefone);
+        this.endereco = EnderecoValidar.validar(endereco);
     }
-
 
     public String getNome() { return nome; }
     public String getCpf() { return cpf; }
     public String getTelefone() { return telefone; }
     public String getEndereco() { return endereco; }
-    public void setNome(String nome) { this.nome = nome; }
-    public void setTelefone(String telefone) { this.telefone = telefone; }
-    public void setEndereco(String endereco) { this.endereco = endereco; }
+
+    public void setNome(String nome) { this.nome = NomeValidar.validar(nome); }
+    public void setTelefone(String telefone) { this.telefone = TelefoneValidar.validar(telefone); }
+    public void setEndereco(String endereco) { this.endereco = EnderecoValidar.validar(endereco); }
+
+    public void adicionarCartao(Cartao cartao) { CartaoValidar.validar(this, cartao); this.cartao = cartao; }
+    public Cartao getCartao() { return cartao; }
 
     public void cadastroCliente() {
         System.out.println("\nOlá " + getNome() + " Sejá Bem-vindo ao seu Banco!");
