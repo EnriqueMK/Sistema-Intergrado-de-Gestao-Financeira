@@ -1,6 +1,7 @@
 package src.model;
 
 public class Debito extends Cartao {
+    
     private double saldo;
 
     public Debito(double saldo) { this.saldo = 0; }

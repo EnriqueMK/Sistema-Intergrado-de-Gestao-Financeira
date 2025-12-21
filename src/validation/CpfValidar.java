@@ -3,6 +3,7 @@ package src.validation;
 public final class CpfValidar {
 
     private CpfValidar() {}
+    
     public static String validar(String cpf) {
         if (cpf == null || cpf.isBlank()) { throw new IllegalArgumentException("O CPF não pode estar vazio."); }
         cpf = cpf.trim();

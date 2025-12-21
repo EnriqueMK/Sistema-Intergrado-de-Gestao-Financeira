@@ -3,6 +3,7 @@ package src.validation;
 public final class NomeValidar {
 
     private NomeValidar() {}
+    
     public static String validar(String nome) {
         if (nome == null || nome.isBlank()) { throw new IllegalArgumentException("O nome não pode estar vazio."); }
         nome = nome.trim();

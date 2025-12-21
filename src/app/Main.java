@@ -1,14 +1,16 @@
 package src.app;
 
 import src.model.Cliente;
+import src.model.Credito;
 
 public class Main {
     public static void main(String[] args) {
 
         try {
             Cliente cliente = new Cliente("Enrique Paulo", "50690239858", "11968746930", "Rua Vulnerária, 58");
-            
+            Credito credito = new Credito(cliente, 1);
             cliente.cadastroCliente();
+            cliente.adicionarCartao(credito);
         } catch (IllegalArgumentException erro) {
             System.err.println("Erro: " + erro.getMessage());
         } catch (Exception erroInes) {

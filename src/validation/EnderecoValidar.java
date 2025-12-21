@@ -3,6 +3,7 @@ package src.validation;
 public final class EnderecoValidar {
     
     private EnderecoValidar() {}
+    
     public static String validar(String endereco) {
         if (endereco == null || endereco.isBlank()) { throw new IllegalArgumentException("O endereço não pode estar vazio."); }
         endereco = endereco.trim();

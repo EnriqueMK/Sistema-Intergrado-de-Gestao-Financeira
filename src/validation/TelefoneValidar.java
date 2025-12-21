@@ -3,6 +3,7 @@ package src.validation;
 public final class TelefoneValidar {
 
     private TelefoneValidar() {}
+    
     public static String validar(String telefone) {
         if (telefone == null || telefone.isBlank()) { throw new IllegalArgumentException("O telefone não pode estar vazio."); }
         telefone = telefone.trim();
