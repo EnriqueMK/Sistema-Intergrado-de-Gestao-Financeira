@@ -1,10 +1,13 @@
-package src.validation;
+package src.validation.Credito;
 
+// Classe não herdável
 public final class LimiteCreditoValidar {
-
-    private LimiteCreditoValidar() {}
     
-    public double validar(double limite) {
+    // Construtor não instanciável
+    private LimiteCreditoValidar() {}
+
+    // Método que valida a entrada de dado Limite
+    public static double validar(double limite) {
         if (limite < 200.0 || limite > 100000.0) {
             throw new IllegalArgumentException("O limite deve conter entre R$ 200,00 a R$ 100.000.");
         }

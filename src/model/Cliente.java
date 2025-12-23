@@ -1,10 +1,10 @@
 package src.model;
 
-import src.validation.CartaoValidar;
-import src.validation.CpfValidar;
-import src.validation.EnderecoValidar;
-import src.validation.NomeValidar;
-import src.validation.TelefoneValidar;
+import src.validation.Cartao.CartaoValidar;
+import src.validation.Cliente.CpfValidar;
+import src.validation.Cliente.EnderecoValidar;
+import src.validation.Cliente.NomeValidar;
+import src.validation.Cliente.TelefoneValidar;
 
 public class Cliente {
 
@@ -21,17 +21,39 @@ public class Cliente {
         this.endereco = EnderecoValidar.validar(endereco);
     }
 
-    public String getNome() { return nome; }
-    public String getCpf() { return cpf; }
-    public String getTelefone() { return telefone; }
-    public String getEndereco() { return endereco; }
+    // Getters do Cliente
+    public String getNome() {
+        return nome;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public String getTelefone() {
+        return telefone;
+    }
+    public String getEndereco() {
+        return endereco;
+    }
 
-    public void setNome(String nome) { this.nome = NomeValidar.validar(nome); }
-    public void setTelefone(String telefone) { this.telefone = TelefoneValidar.validar(telefone); }
-    public void setEndereco(String endereco) { this.endereco = EnderecoValidar.validar(endereco); }
+    // Setters do Cliente
+    public void setNome(String nome) {
+        this.nome = NomeValidar.validar(nome);
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = TelefoneValidar.validar(telefone);
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = EnderecoValidar.validar(endereco);
+    }
 
-    public void adicionarCartao(Cartao cartao) { CartaoValidar.validar(this, cartao); this.cartao = cartao; }
-    public Cartao getCartao() { return cartao; }
+    // Getters ou/e Setters do Cartão
+    public void adicionarCartao(Cartao cartao) {
+        CartaoValidar.validar(this, cartao);
+        this.cartao = cartao;
+    }
+    public Cartao getCartao() {
+        return cartao;
+    }
 
     public void cadastroCliente() {
         System.out.println("\nOlá " + getNome() + " Sejá Bem-vindo ao seu Banco!");
@@ -40,5 +62,5 @@ public class Cliente {
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + getCpf());
         System.out.println("Telefone: " + getTelefone());
-    } 
+    }
 }

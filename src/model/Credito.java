@@ -1,12 +1,18 @@
 package src.model;
 
+import src.validation.Credito.LimiteCreditoValidar;
+
 public class Credito extends Cartao {
     
     private double limite;
 
-    public Credito(Cliente cliente, double limite) { super(); this.limite = limite; }
-    public double getLimite() { return limite; }
-    public String exibirLimite() { return "Limite: " + getLimite(); }
+    public Credito(Cliente cliente, double limite) {
+        super(cliente);
+        this.limite = LimiteCreditoValidar.validar(limite);
+    }
+
+    public void setLimite(double limite) {
+    }
 
     @Override
     public void informacoesCartao() {
@@ -14,5 +20,6 @@ public class Credito extends Cartao {
         System.out.println("Número do Cartão: " + getNumero());
         System.out.println("CVV: " + getCvv());
         System.out.println("Vencimento: " + getDataVenc());
+        System.out.println("Limite: " + limite);
     }
 }
