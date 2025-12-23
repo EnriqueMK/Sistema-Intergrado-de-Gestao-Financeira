@@ -12,6 +12,7 @@ public class Credito extends Cartao {
     }
 
     public void setLimite(double limite) {
+        this.limite = LimiteCreditoValidar.validar(limite);
     }
 
     @Override
